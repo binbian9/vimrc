@@ -5,6 +5,10 @@
 " read https://github.com/vgod/vimrc/blob/master/README.md for more info
 
 
+
+"For Taglist
+
+map <F6> <ESC>:TlistToggle<CR>
 " For pathogen.vim: auto load all plugins in .vim/bundle
 
 let g:pathogen_disabled = []
@@ -47,9 +51,12 @@ if has("gui_running")	" GUI color and font settings
   highlight CursorLine          guibg=#003853 ctermbg=24  gui=none cterm=none
 else
 " terminal color settings
+  set t_Co=256
   colors vgod
+  "colors tir_black
 endif
 
+set nu
 set clipboard=unnamed	" yank to the system register (*) by default
 set showmatch		" Cursor shows matching ) and }
 set showmode		" Show current mode
@@ -294,7 +301,6 @@ if !has("gui_running")
    imap OB <ESC>ji
    imap OC <ESC>li
    imap OD <ESC>hi
-
    nmap OA k
    nmap OB j
    nmap OC l
